@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 interface Playlist {
   id: string;
   name: string;
@@ -22,13 +20,10 @@ const PlaylistsList = ({ playlists }: PlaylistsListProps) => {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {playlists.map((playlist) => (
             <div key={playlist.id} className="bg-gray-800 p-3 rounded-lg">
-              <Image
+              <img
                 className="rounded-md"
                 src={playlist.images[0]?.url}
                 alt={playlist.name}
-                width={300}
-                height={300}
-                layout="responsive"
               />
               <p className="mt-2 text-sm">{playlist.name}</p>
             </div>

@@ -1,4 +1,3 @@
-import Image from "next/image";
 interface Album {
   id: string;
   name: string;
@@ -21,13 +20,10 @@ const AlbumsList = ({ albums }: AlbumsListProps) => {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {albums.map((album: Album) => (
             <div key={album.id} className="bg-gray-00 p-3 rounded-lg">
-              <Image
+              <img
                 className="rounded-md"
                 src={album.images[0]?.url}
                 alt={album.name}
-                width={300}
-                height={300}
-                layout="responsive"
               />
               <p className="mt-2 text-sm">{album.name}</p>
             </div>
